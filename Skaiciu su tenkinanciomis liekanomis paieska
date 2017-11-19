@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+#define MIN_SKAICIUS 2518
+
+bool arTeisingaLiekana(int m, int y){
+    return m%y == y-1;
+}
+
+int main()
+{
+    long long int m, n;
+    cin >> m >> n;
+    if (m < 2518 || n < m){
+        cout << "netinkami skaiciai";
+    }
+    for (int i = m; m <= n; m++){
+        if (arTeisingaLiekana(m, 2) == true &&
+            arTeisingaLiekana(m, 3) == true &&
+            arTeisingaLiekana(m, 4) == true &&
+            arTeisingaLiekana(m, 5) == true &&
+            arTeisingaLiekana(m, 6) == true &&
+            arTeisingaLiekana(m, 7) == true &&
+            arTeisingaLiekana(m, 8) == true &&
+            arTeisingaLiekana(m, 9) == true){
+                cout << m << endl;
+            }
+    }
+    return 0;
+}
