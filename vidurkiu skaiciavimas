@@ -1,0 +1,29 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+#define PAMOK_SK 5
+#define PAZYM_SK 5
+
+double vidurkioSkaiciavimas(int paz[]){
+    int suma = 0;
+    for (int i = 0; i < PAZYM_SK; i++){
+        suma += paz[i];
+    }
+    return (double)suma/5;
+}
+
+int main()
+{
+    int pazymiai[PAZYM_SK];
+    double vidurkis[PAZYM_SK];
+    for (int i = 0; i < PAMOK_SK; i++){
+        for (int j = 0; j < PAZYM_SK; j++){
+            cin >> pazymiai[j];
+        }
+        vidurkis[i] = vidurkioSkaiciavimas(pazymiai);
+        cout << fixed << setprecision(2) << vidurkis[i] << endl;
+    }
+    return 0;
+}
